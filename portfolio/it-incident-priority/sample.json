@@ -1,0 +1,14 @@
+[
+  {
+    "id": "INC001",
+    "service": "Demo ERP",
+    "impact": "high",
+    "urgency": "high"
+  },
+  {
+    "id": "INC002",
+    "service": "Single workstation",
+    "impact": "low",
+    "urgency": "medium"
+  }
+]

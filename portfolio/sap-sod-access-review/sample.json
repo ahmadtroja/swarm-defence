@@ -1,0 +1,16 @@
+[
+  {
+    "user": "DEMO01",
+    "roles": [
+      "VENDOR_MAINTAIN",
+      "PAYMENT_EXECUTE"
+    ]
+  },
+  {
+    "user": "DEMO02",
+    "roles": [
+      "PO_CREATE",
+      "PO_APPROVE"
+    ]
+  }
+]

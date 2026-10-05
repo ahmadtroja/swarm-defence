@@ -1,0 +1,4 @@
+import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';import {analyze} from './engine.mjs';
+const sample=JSON.parse(readFileSync(new URL('./sample.json',import.meta.url)));const result=analyze(sample);assert.ok(result.length);assert.ok(result.some(r=>Object.values(r).includes("high")));assert.deepEqual(analyze([]),[]);assert.throws(()=>analyze({}));assert.throws(()=>analyze([{}]));assert.throws(()=>analyze(Array(10001).fill({})));console.log('PASS: sample finding, empty input, malformed records, input type, record limit');
+const old=structuredClone(sample);old[3].timestamp='2026-10-05T09:00:00Z';assert.equal(analyze(old)[0].severity,'medium');const isolated=structuredClone(sample);isolated[3].ip='198.51.100.2';assert.equal(analyze(isolated).find(r=>r.identity.includes('198.51')).severity,'low');assert.deepEqual(analyze([...sample].reverse()),analyze(sample));
+console.log('PASS: domain edge cases');
