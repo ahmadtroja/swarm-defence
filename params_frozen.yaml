@@ -1,0 +1,126 @@
+# Phase-0 frozen parameters for the cooperative distributed detection evaluation.
+# These values are pre-registered for review and must not be changed after approval
+# except through a documented DEVIATIONS.md entry.
+
+freeze:
+  status: phase0_review
+  date_utc: "2026-07-16"
+  no_test_campaigns_before_approval: true
+
+randomness:
+  validation:
+    topology_seed_range: [1000, 1999]
+    campaign_seed_range: [100000, 199999]
+    adversary_seed_range: [300000, 399999]
+  calibration_holdout:
+    topology_seed_range: [2000, 2499]
+    campaign_seed_range: [200000, 249999]
+    adversary_seed_range: [400000, 449999]
+  test:
+    topology_seed_range: [5000, 5999]
+    campaign_seed_range: [500000, 599999]
+    adversary_seed_range: [700000, 799999]
+
+low_rate_grid:
+  inter_hop_dwell: [fast, slow, ultra_slow_beyond_decay_horizon]
+  security_events_per_hop: [zero_to_one, two_to_three, many]
+  anomaly_amplitude: [faint, moderate]
+  path_length: [3, 6, 10]
+  branching: [chain, tree]
+  edge_reuse: [one_time, corridor_reuse]
+  credential_type: [user, service, admin]
+  origins: [one, two, unknown_external]
+  full_factorial_cells_per_topology: 1944
+  fractional_subset:
+    validation_cells_per_topology_family: 216
+    test_cells_per_topology_family: 216
+    method: deterministic_balanced_pairwise_coverage
+
+campaigns:
+  initial_replications_per_selected_cell: 40
+  censoring_horizon_seconds: 86400
+  paired_streams_across_systems: true
+
+topologies:
+  families:
+    - name: enterprise_120
+      target_nodes: 120
+      required_features: [departments, workstations, servers, domain_controllers, admin_nodes, chatty_service_edges]
+    - name: enterprise_500
+      target_nodes: 500
+      required_features: [departments, shared_services, server_clusters, admin_hubs, heterogeneous_edge_rates]
+    - name: flat_degenerate
+      target_nodes: 120
+      required_features: [weak_hierarchy, high_ambiguity, peer_like_edges]
+
+mechanism:
+  elapsed_time_decay_only: true
+  freshness:
+    half_life_seconds: 3600
+    ultra_slow_beyond_decay_horizon_multiplier: 6
+  local_gate:
+    min_local_evidence_for_cooperative_uptake: 0.05
+  cooperation_budget:
+    window_seconds: 3600
+    aggregate_budget_per_recipient: 1.0
+    per_source_subbudget_fraction: 0.2
+    consumption_semantics: true
+  diversity:
+    min_distinct_sources_for_high_confidence: 2
+  contradiction:
+    rootness_incoming_edge_penalty: 2.0
+    high_evidence_edge_threshold: 0.7
+    temporal_consistency_window_seconds: 7200
+  double_counting:
+    default_policy: allow_both_channels_with_event_id_tags
+    sensitivity_policy: halve_shared_event_contribution_in_one_channel
+
+systems:
+  baselines: [B0_local_only, B1_central_streaming, B2_static_graph, B3_temporal_graph_only, B4_cooperation_only, B5_full]
+  ablations: [no_source_budget, no_aggregate_budget, no_diversity, no_local_gate, no_dedup, no_freshness]
+  b1_central_streaming:
+    ingest_batch_delay_seconds: 300
+
+matched_budget:
+  target_false_alerts_per_host_day: 0.05
+  threshold_grid_points: 101
+  tie_break: lower_false_alert_rate
+  freeze_thresholds_after_validation: true
+
+adversarial_suite:
+  replay: [stale_high_score_messages, stale_path_events]
+  flooding: [high_rate_influence_messages, high_rate_benign_looking_events]
+  collusion_k: [1, 3, 5]
+  silence: [true_path_sensors]
+  clock_skew:
+    small_seconds: [-30, 30]
+    large_seconds: [-1800, 1800]
+  message_loss_rates: [0.01, 0.10]
+  delay_reorder: true
+  partition_recover: true
+
+statistics:
+  bootstrap_resamples: 10000
+  confidence_level: 0.95
+  alpha: 0.05
+  target_power: 0.8
+  target_relative_latency_change: 0.15
+  planning_assumptions:
+    paired_latency_delta_cv_max: 0.8
+    within_pair_correlation_min: 0.5
+    effective_uncensored_detection_rate_min: 0.8
+  multiple_comparison_control: benjamini_hochberg_secondary_outcomes
+
+calibration:
+  methods: [isotonic, platt]
+  held_out_topologies: true
+  held_out_campaign_types: true
+  metrics: [brier, ece, reliability_plots, abstention_coverage_curve, negative_log_loss]
+
+dependencies_allowed_without_additional_approval:
+  - numpy
+  - networkx
+  - pandas
+  - matplotlib
+  - scipy
+  - pyyaml
