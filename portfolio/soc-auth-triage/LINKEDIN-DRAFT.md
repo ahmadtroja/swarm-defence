@@ -7,7 +7,7 @@ The demo includes synthetic data, editable JSON inputs, transparent decision rul
 This is a learning project, not a production deployment or vendor-certified tool.
 
 Demo: https://ahmadtroja-security-it-lab.netlify.app/soc-auth-triage/
-Code: https://github.com/ahmadtroja/swarm-defence/tree/portfolio/security-it-lab/portfolio/soc-auth-triage
+Code: https://github.com/ahmadtroja/swarm-defence/tree/main/portfolio/soc-auth-triage
 
 I'm seeking opportunities in cybersecurity, IT and SAP-related roles. Feedback on the rules and workflow is welcome.
 

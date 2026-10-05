@@ -11,7 +11,7 @@ The demo includes synthetic data, editable JSON inputs, transparent decision rul
 This is a learning project, not a production deployment or vendor-certified tool.
 
 Demo: https://ahmadtroja-security-it-lab.netlify.app/soc-auth-triage/
-Code: https://github.com/ahmadtroja/swarm-defence/tree/portfolio/security-it-lab/portfolio/soc-auth-triage
+Code: https://github.com/ahmadtroja/swarm-defence/tree/main/portfolio/soc-auth-triage
 
 I'm seeking opportunities in cybersecurity, IT and SAP-related roles. Feedback on the rules and workflow is welcome.
 
@@ -30,7 +30,7 @@ The demo includes synthetic data, editable JSON inputs, transparent decision rul
 This is a learning project, not a production deployment or vendor-certified tool.
 
 Demo: https://ahmadtroja-security-it-lab.netlify.app/cloud-iam-policy-review/
-Code: https://github.com/ahmadtroja/swarm-defence/tree/portfolio/security-it-lab/portfolio/cloud-iam-policy-review
+Code: https://github.com/ahmadtroja/swarm-defence/tree/main/portfolio/cloud-iam-policy-review
 
 I'm seeking opportunities in cybersecurity, IT and SAP-related roles. Feedback on the rules and workflow is welcome.
 
@@ -49,7 +49,7 @@ The demo includes synthetic data, editable JSON inputs, transparent decision rul
 This is a learning project, not a production deployment or vendor-certified tool.
 
 Demo: https://ahmadtroja-security-it-lab.netlify.app/sap-sod-access-review/
-Code: https://github.com/ahmadtroja/swarm-defence/tree/portfolio/security-it-lab/portfolio/sap-sod-access-review
+Code: https://github.com/ahmadtroja/swarm-defence/tree/main/portfolio/sap-sod-access-review
 
 I'm seeking opportunities in cybersecurity, IT and SAP-related roles. Feedback on the rules and workflow is welcome.
 
@@ -68,7 +68,7 @@ The demo includes synthetic data, editable JSON inputs, transparent decision rul
 This is a learning project, not a production deployment or vendor-certified tool.
 
 Demo: https://ahmadtroja-security-it-lab.netlify.app/it-incident-priority/
-Code: https://github.com/ahmadtroja/swarm-defence/tree/portfolio/security-it-lab/portfolio/it-incident-priority
+Code: https://github.com/ahmadtroja/swarm-defence/tree/main/portfolio/it-incident-priority
 
 I'm seeking opportunities in cybersecurity, IT and SAP-related roles. Feedback on the rules and workflow is welcome.
 
@@ -87,7 +87,7 @@ The demo includes synthetic data, editable JSON inputs, transparent decision rul
 This is a learning project, not a production deployment or vendor-certified tool.
 
 Demo: https://ahmadtroja-security-it-lab.netlify.app/vulnerability-remediation-planner/
-Code: https://github.com/ahmadtroja/swarm-defence/tree/portfolio/security-it-lab/portfolio/vulnerability-remediation-planner
+Code: https://github.com/ahmadtroja/swarm-defence/tree/main/portfolio/vulnerability-remediation-planner
 
 I'm seeking opportunities in cybersecurity, IT and SAP-related roles. Feedback on the rules and workflow is welcome.
 

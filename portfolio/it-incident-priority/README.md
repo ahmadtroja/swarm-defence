@@ -28,7 +28,7 @@ node test.mjs
 - `sample.json`: synthetic input fixture
 - `app.mjs`: accessible input, safe text rendering and JSON export
 - `test.mjs`: executable checks for sample outcomes and invalid inputs
-- GitHub Pages serves static files from `main`
+- Netlify serves static files from the `portfolio` directory
 
 ## Methodology and limitations
 
